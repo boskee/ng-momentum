@@ -5,15 +5,15 @@
     </mat-card-header>
     <mat-card-content>
         <div class="table-container">
-            <table mat-table [dataSource]="list">
+            <table mat-table [dataSource]="list" matSort>
                 <% parameters.forEach(function(parameter){ %>
                 <ng-container matColumnDef="<%= parameter %>">
-                    <th mat-header-cell *matHeaderCellDef> <%= parameter %></th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <%= parameter %></th>
                     <td mat-cell *matCellDef="let element"> {{element.<%= parameter %>}}</td>
                 </ng-container>
                 <% }) %>
                 <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef> Action</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action</th>
                     <td mat-cell *matCellDef="let element">
                         <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', element.id]"
                            mat-button
@@ -53,6 +53,11 @@
         <td>
             <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', item.id]"
                i18n="view button|view@@viewButton">View</a>
+            <a [routerLink]="['/<%= dasherize(name) %>', item.id, 'edit']"
+               i18n="edit button|edit@@editButton">Edit</a>
+            <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', item.id]"
+               color="warn"
+               i18n="destroy button|destroy@@destroyButton">Destroy</a>
         </td>
     </tr>
     </tbody>
