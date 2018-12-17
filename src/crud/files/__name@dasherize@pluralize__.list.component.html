@@ -85,6 +85,11 @@
         <td>
             <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', item.id]"
                i18n="view button|view@@viewButton">View</a>
+            <a [routerLink]="['/<%= dasherize(name) %>', item.id, 'edit']"
+               i18n="edit button|edit@@editButton">Edit</a>
+            <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', item.id]"
+               color="warn"
+               i18n="destroy button|destroy@@destroyButton">Destroy</a>
         </td>
     </tr>
     </tbody>
