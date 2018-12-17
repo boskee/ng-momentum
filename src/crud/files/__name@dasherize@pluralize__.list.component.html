@@ -18,10 +18,10 @@
                         <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', element.id]"
                            mat-button
                            i18n="view button|view@@viewButton">View</a>
-                        <a [routerLink]="['/<%= dasherize(name) %>', item.id, 'edit']"
+                        <a [routerLink]="['/<%= dasherize(name) %>', element.id, 'edit']"
                            mat-button
                            i18n="edit button|edit@@editButton">Edit</a>
-                        <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', item.id]"
+                        <a [routerLink]="['/<%= dasherize(pluralize(name)) %>', element.id]"
                            mat-button
                            color="warn"
                            i18n="destroy button|destroy@@destroyButton">Destroy</a>
