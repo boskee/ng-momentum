@@ -22,6 +22,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
     MatButtonModule,
     MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     MatCardModule,
     MatListModule,
     MatFormFieldModule,
@@ -40,6 +42,8 @@ import {
     SharedModule,
     <% if(ui.toString() === 'bootstrap'){ %>NgbModule,
     <% } %><% if(ui.toString() === 'material'){ %>MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     MatButtonModule,
     MatCardModule,
     MatListModule,
