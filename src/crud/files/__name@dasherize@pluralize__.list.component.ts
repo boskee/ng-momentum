@@ -25,7 +25,7 @@ export class <%= classify(pluralize(name)) %>ListComponent implements OnInit {
    * Columns to display in the UI.
    */
   columnsToDisplay: string[] = [<% parameters.forEach(function(parameter){ %>'<%= parameter %>', <% }) %> 'action'];
-<% } else %>
+<% } else { %>
     list: <%= classify(singularize(vo)) %>[];
 <% } %>
   /**
