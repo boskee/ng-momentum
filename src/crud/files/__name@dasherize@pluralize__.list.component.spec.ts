@@ -52,6 +52,6 @@ describe('<%= classify(pluralize(name)) %>ListComponent', () => {
 
     it('should be created', () => {
         expect(component).toBeTruthy();
-        expect(component.list.length).toBe(3);
+        expect(component.list.data.length).toBe(3);
     });
 });
